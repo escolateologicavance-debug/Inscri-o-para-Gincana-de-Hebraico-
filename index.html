@@ -248,6 +248,7 @@ gap:0;
 <div class="header-main">
 <h1>MILCHEMET IVRIT</h1>
 <h2>Regulamento Oficial e Ficha de Inscrição</h2>
+<h3>Gilberto Moreira</h3>
 </div>
 
 <h3>OBJETIVO DA GINCANA</h3>
@@ -271,12 +272,14 @@ A Milchemet Ivrit foi criada para estimular o aprendizado do Hebraico Bíblico d
 <ol>
 <li>A competição é individual.</li>
 <li>Todos os participantes serão chamados de Estudantes ou Aprendizes.</li>
-<li>A decisão do Árbitro Oficial será absoluta e irrevogável.</li>
-<li>Cada resposta terá tempo máximo de 45 segundos.</li>
+<li>A decisão do Árbitro Oficial será absoluta e irrevogável nas avaliações de conduta.</li>
+<li><strong>Tempo e Ativação:</strong> Cada pergunta terá o tempo limite de 25 segundos para resposta, contados apenas após a leitura do mediador e a ativação manual do botão de start pelo operador.</li>
+<li><strong>Corte Automático Eliminatório:</strong> Após as primeiras 4 (quatro) rodadas completas, o programa executará um corte automático. Participantes com pontuação inferior a 40 pontos serão eliminados imediatamente, sem qualquer direito a reciclagem, repescagem ou reaproveitamento de pontos.</li>
 <li>Perguntas erradas não poderão ser reutilizadas por outros participantes.</li>
-<li>Consultas, celulares e ajuda externa são proibidos.</li>
-<li>Em caso de empate, haverá pergunta de desempate.</li>
-<li>Condutas desrespeitosas poderão gerar perda de pontos ou eliminação.</li>
+<li>Consultas, celulares e ajuda externa são terminantemente proibidos.</li>
+<li><strong>Fase Extra de Tira-Teima:</strong> Caso haja empate de pontos após a 5ª rodada, os finalistas empatados serão submetidos ao Tira-Teima de forma sequencial (1 pergunta para cada um), onde os acertos somam pontos e os erros geram penalidade severa.</li>
+<li><strong>Resultado Tecnológico Automatizado:</strong> A classificação matemática final do 1º, 2º, 3º e 4º lugar será computada, classificada e exibida na tela pelo próprio sistema do programa de forma automática, sem qualquer tipo de interferência manual do Árbitro ou do Mediador.</li>
+<li>Condutas desrespeitosas poderão gerar perda de pontos ou eliminação direta.</li>
 </ol>
 
 <h3>SISTEMA DE PONTUAÇÃO</h3>
@@ -284,40 +287,40 @@ A Milchemet Ivrit foi criada para estimular o aprendizado do Hebraico Bíblico d
 <table class="tabela-pontos">
 <thead>
 <tr>
-<th>AÇÃO</th>
-<th>PONTUAÇÃO</th>
+<th>AÇÃO NO JOGO</th>
+<th>PONTUAÇÃO (SISTEMA AUTOMÁTICO)</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td>Resposta correta</td>
-<td><strong>+10 Shekels</strong></td>
+<td>Resposta correta (com tempo restante menor que 10 segundos)</td>
+<td><strong>+10 pontos</strong></td>
 </tr>
 
 <tr>
-<td>Resposta correta em menos de 10 segundos</td>
-<td><strong>+5 Shekels bônus</strong></td>
+<td>Resposta correta rápida (com tempo restante igual ou maior que 10 segundos)</td>
+<td><strong>+15 pontos</strong></td>
 </tr>
 
 <tr>
-<td>Roubo de resposta</td>
-<td><strong>+15 Shekels</strong></td>
+<td>Tempo esgotado ou resposta errada nas rodadas regulares (1 a 5)</td>
+<td><strong>0 pontos</strong></td>
 </tr>
 
 <tr>
-<td>Erro de pronúncia grave</td>
-<td><strong>-5 Shekels</strong></td>
+<td>Corte de Pontuação (Fim da 4ª Rodada)</td>
+<td><strong>Eliminação Automática se pontuação < 40 pontos</strong></td>
 </tr>
 
 <tr>
-<td>Ajuda externa</td>
-<td><strong>-10 Shekels</strong></td>
+<td>Resposta correta na Fase de Tira-Teima (Desempate)</td>
+<td><strong>+10 pontos</strong></td>
 </tr>
 
 <tr>
-<td>Desafio relâmpago final</td>
-<td><strong>+20 Shekels</strong></td>
+<td>Resposta errada ou não respondida na Fase de Tira-Teima</td>
+<td><strong>-10 pontos (Subtração)</strong></td>
 </tr>
 </tbody>
 </table>
@@ -427,24 +430,24 @@ const situacao = document.querySelector('input[name="situacao_pagamento"]:checke
 const numeroTelefone = "5566984666186";
 
 const mensagem = `
-*FICHA DE INSCRIÇÃO — MILCHEMET IVRIT*
+FICHA DE INSCRIÇÃO — MILCHEMET IVRIT
 
-*Nome do Aprendiz:* ${nome}
+Nome do Aprendiz: $`{nome}
 
-*Onde Congrega:* ${congregacao}
+Onde Congrega: `${congregacao}
 
-*Pastor Presidente:* ${pastor}
+Pastor Presidente: $`{pastor}
 
-*Dirigente Local:* ${dirigente}
+Dirigente Local: `${dirigente}
 
-*Data da Inscrição:* ${dataFormatada}
+Data da Inscrição: $`{dataFormatada}
 
-*Situação:* ${situacao}
+Situação: `${situacao}
 
-*חָזַק*
+חָזַק
 `;
 
-const link = `https://api.whatsapp.com/send?phone=${numeroTelefone}&text=${encodeURIComponent(mensagem)}`;
+const link = https://api.whatsapp.com/send?phone=${numeroTelefone}&text=${encodeURIComponent(mensagem)};
 
 window.location.href = link;
 
